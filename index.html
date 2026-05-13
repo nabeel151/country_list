@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>GlobalAtlas UI</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f5f5fb] text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-sm px-8 py-4 flex items-center justify-between">
+
+    <!-- Left -->
+    <div class="flex items-center gap-10">
+
+      <!-- Logo -->
+      <h1 class="text-3xl font-bold text-blue-700">
+        GlobalAtlas
+      </h1>
+
+      <!-- Menu -->
+      <ul class="hidden md:flex gap-8 font-medium text-gray-600">
+
+        <li class="text-blue-700 border-b-2 border-blue-700 pb-1 cursor-pointer">
+          Explorer
+        </li>
+
+        <li class="hover:text-blue-700 cursor-pointer">
+          Regions
+        </li>
+
+        <li class="hover:text-blue-700 cursor-pointer">
+          Statistics
+        </li>
+
+        <li class="hover:text-blue-700 cursor-pointer">
+          Compare
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!-- Right -->
+    <div class="flex items-center gap-5">
+
+      <!-- Search -->
+      <div class="hidden md:flex items-center bg-gray-100 rounded-lg px-4 py-2 w-72">
+
+        <input
+          type="text"
+          placeholder="Search data..."
+          class="bg-transparent outline-none w-full"
+        />
+
+      </div>
+
+      <!-- Icons -->
+      <button class="text-xl">🌙</button>
+      <button class="text-xl">🌐</button>
+
+      <!-- Profile -->
+      <img
+        src="https://i.pravatar.cc/40"
+        class="w-10 h-10 rounded-full"
+      />
+
+    </div>
+
+  </nav>
+
+  <!-- Filter Section -->
+  <section class="max-w-7xl mx-auto bg-white p-6 rounded-2xl mt-8 shadow-sm">
+
+    <div class="grid md:grid-cols-4 gap-5">
+
+      <!-- Search Countries -->
+      <div class="md:col-span-2">
+
+        <label class="block text-sm font-semibold mb-2">
+          Search Countries
+        </label>
+
+        <input
+          type="text"
+          placeholder="Filter by name, capital..."
+          class="w-full border rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
+      </div>
+
+      <!-- Region -->
+      <div>
+
+        <label class="block text-sm font-semibold mb-2">
+          Region
+        </label>
+
+        <select class="w-full border rounded-lg px-4 py-3 outline-none">
+
+          <option>All Regions</option>
+          <option>Asia</option>
+          <option>Europe</option>
+          <option>Africa</option>
+          <option>Americas</option>
+
+        </select>
+
+      </div>
+
+      <!-- Button -->
+      <div class="flex items-end">
+
+        <button class="bg-blue-700 hover:bg-blue-800 text-white w-full py-3 rounded-lg font-semibold">
+          Apply
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Countries -->
+ <section 
+  id="countryContainer"
+  class="max-w-7xl mx-auto mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+</section>
+
+  <!-- Pagination -->
+  <div id="pagination" class="flex justify-center gap-2 mt-6"></div>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t py-8">
+
+    <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-5">
+
+      <!-- Left -->
+      <div>
+
+        <h2 class="text-blue-700 text-xl font-bold">
+          GlobalAtlas
+        </h2>
+
+        <p class="text-gray-500 text-sm mt-1">
+          © 2024 GlobalAtlas Directory
+        </p>
+
+      </div>
+
+      <!-- Right -->
+      <div class="flex gap-6 text-sm text-gray-600">
+
+        <a href="#" class="hover:text-blue-700">
+          Privacy Policy
+        </a>
+
+        <a href="#" class="hover:text-blue-700">
+          Terms
+        </a>
+
+        <a href="#" class="hover:text-blue-700">
+          API Docs
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+<script src="country.js"></script>
+</body>
+</html>
