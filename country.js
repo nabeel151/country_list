@@ -4,6 +4,8 @@ const countryContainer = document.getElementById("countryContainer");
 
 const paginationContainer = document.getElementById("pagination");
 
+const loader = document.getElementById("loader");
+
 let countriesData = [];
 
 let currentPage = 1;
@@ -12,13 +14,19 @@ const itemsPerPage = 12;
 
 async function getCountries() {
   try {
+    loader.classList.remove("hidden");
+    countryContainer.innerHTML = ""; 
+
     let response = await fetch(baseurl);
      countriesData = await response.json();
     console.log(countriesData);
 
     renderCountries();
+    loader.classList.add("hidden");
+
   } catch (error) {
     console.log("Error:", error);
+     loader.classList.add("hidden"); 
   }
 }
 
