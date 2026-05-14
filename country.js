@@ -201,45 +201,41 @@ function applyFilters() {
 
   }
 
-  filteredCountries.forEach((country) => {
+ filteredCountries.forEach((country) => {
 
-    const card = `
-      <div class="bg-white rounded-2xl p-4 shadow-sm">
+  countryContainer.innerHTML += `
+    <div class="bg-white rounded-2xl p-4 shadow-sm hover:shadow-lg transition">
 
-        <div class="flex justify-between items-center">
-          <h2 class="text-xl font-bold">
-            ${country.name.common}
-          </h2>
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-bold">
+          ${country.name.common}
+        </h2>
 
-          <img
-            src="${country.flags.png}"
-            class="w-10 h-6 rounded"
-          />
-        </div>
-
-        <div class="mt-3 text-sm space-y-1">
-
-          <p>
-            Population: ${country.population.toLocaleString()}
-          </p>
-
-          <p>
-            Region: ${country.region}
-          </p>
-
-          <p>
-            Capital:
-            ${country.capital ? country.capital[0] : "N/A"}
-          </p>
-
-        </div>
-
-        
+        <img
+          src="${country.flags.png}"
+          class="w-10 h-6 rounded"
+        />
       </div>
-    `;
 
-    countryContainer.innerHTML += card;
-  });
+      <div class="mt-3 text-sm space-y-1">
+
+        <p>Population: ${country.population.toLocaleString()}</p>
+        <p>Region: ${country.region}</p>
+        <p>Capital: ${country.capital?.[0] || "N/A"}</p>
+
+      </div>
+
+      <!-- ✅ BUTTON (FIXED) -->
+      <button
+        onclick="viewDetails('${country.name.common}')"
+        class="w-full mt-3 py-2 rounded-lg border hover:bg-blue-500 text-lg"
+      >
+        View Details
+      </button>
+
+    </div>
+  `;
+});
 
 }
 ///view detal route
