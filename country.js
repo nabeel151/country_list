@@ -234,13 +234,14 @@ function applyFilters() {
 
         </div>
 
+        
       </div>
     `;
 
     countryContainer.innerHTML += card;
   });
-}
 
+}
 ///view detal route
 function viewDetails(countryName) {
   window.location.href = `details.html?name=${countryName}`;
